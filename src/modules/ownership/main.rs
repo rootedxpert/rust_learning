@@ -9,7 +9,6 @@ fn ownership_2() {
     let user1 = String::from("John");
     let user2 = user1; // now user1 is no longer valid, all predetrimed at compile time,under the hood user1 is moved to user2, so user1 is no longer valid
     println!("User2: {}", user2);
-    // as ownership is already passed to above println you cant call this function again with user1
 } // now user2 is no longer valid, all predetrimed at compile time
 
 fn ownership_3() {
