@@ -1,7 +1,9 @@
 pub mod modules;
-use modules::ownership::main::ownership;
-use modules::introduction::introduction;
 use crate::modules::borrowing::main::borrowing;
+use modules::generics::main::generics;
+use modules::introduction::introduction;
+use modules::ownership::main::ownership;
+use modules::traits::main::traits;
 use modules::types::main::types;
 
 fn main() {
@@ -13,4 +15,8 @@ fn main() {
     borrowing();
     // module 4 types
     types();
+    // module 5 generics
+    generics();
+    // module 6 trait
+    traits();
 }

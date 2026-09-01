@@ -43,4 +43,5 @@ pub fn types() {
     };
     let user3 = User::from_user_profile(&user_profile);
     println!("User3: {}", user3.name);
+    println!();
 }
