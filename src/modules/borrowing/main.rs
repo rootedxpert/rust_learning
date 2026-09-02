@@ -1,6 +1,7 @@
 // there are some rules to borrowing, which we will cover in this module
 // rust distinct between mutable and immutable references, and it enforecs them in in compile time, so you can be sure that your code will not break in production
 
+
 struct User {
     name: String,
     age: u32,
@@ -21,7 +22,7 @@ fn borrowing_2() {
     let user2 = &mut user1; // now user1 is no longer valid, all predetrimed at compile time,under the hood user1 is borrowed to user2, so user1 is no longer valid
     user2.push_str(" Doe");
     // as ownership is already passed to above user2 you cant call this function again with user1
-    print_user(&user1);
+    // print_user(&user1);
     print_user(&user2);
 } // now user2 and user1 are no longer valid, all predetrimed at compile time
 
@@ -31,7 +32,7 @@ fn borrowing_3() {
         age: 30,
     };
     print_user(&user1.name);
-    update_name(&user1, String::from("Doe"));
+    // update_name(&user1, String::from("Doe"));
     update_name_v2(&mut user1, String::from("Doe"));
     update_name_v2(&mut user1, String::from("Doe"));
 }
@@ -105,7 +106,7 @@ fn borrowing_8() {
     };
     update_name_v2(&mut user1, String::from("Doe")); // user1 is moved to update_name_v2, so user1 is no longer valid
     drop(user1); // user1 is dropped here, so user1 is no longer valid
-    print_user(&user1.name); // user1 does not exist anymore
+    // print_user(&user1.name); // user1 does not exist anymore
 } // now user1 is no longer valid, all predetrimed at compile time
 
 pub fn borrowing() {
@@ -119,6 +120,7 @@ pub fn borrowing() {
     borrowing_6();
     borrowing_7();
     borrowing_8();
+    println!();
 }
 
 // we have now seen how rust prevents many classes of bugs that we see in other languages,

@@ -46,4 +46,5 @@ pub fn ownership() {
     ownership_2();
     ownership_3();
     ownership_4();
+    println!();
 }
